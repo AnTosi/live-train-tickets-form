@@ -29,7 +29,10 @@ generateButtonElement.addEventListener('click', function () {
 
   console.log(km_da_percorrere, age);
 
+//   inserisco nome passeggero nel biglietto
+
   document.getElementById("passName").innerHTML = fullName;
+
 
   // generatore automatico per carrozza
   document.getElementById("wagonNumber").innerHTML = Math.floor((Math.random() * 6) + 1);
@@ -73,11 +76,12 @@ generateButtonElement.addEventListener('click', function () {
     //console.log(price);
     //console.log(message);
   }
-
-    document.getElementById("ticketCost").innerHTML = price.toFixed(2) + " €";
+    if (km_da_percorrere == 0) {
+        document.getElementById("ticketCost").innerHTML = "Sorry you need to type a number > 0";
+    } else {
+        document.getElementById("ticketCost").innerHTML = price.toFixed(2) + " €";
+    }
   // L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo).
-  result.innerHTML = message
-  console.log(message);
 
 });
 
@@ -105,6 +109,3 @@ cancelButtonElement.addEventListener('click', function () {
 // faccio lo stesso per il tipo di biglietto, ma lo inserisco negli if adeguati per cambiarlo in base a option scelta
 
 //per carrozza e codice cp devo creare 2 generatori random 
-
-
-

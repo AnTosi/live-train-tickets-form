@@ -31,6 +31,13 @@ generateButtonElement.addEventListener('click', function () {
 
   document.getElementById("passName").innerHTML = fullName;
 
+  // generatore automatico per carrozza
+  document.getElementById("wagonNumber").innerHTML = Math.floor((Math.random() * 6) + 1);
+
+  // generatore automatico per cpCode
+  document.getElementById("cpCode").innerHTML = Math.floor((Math.random() * 9999) + 90000);
+
+  
 
   /* Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio, secondo queste regole:
   - il prezzo del biglietto è definito in base ai km (0.21 € al km)
@@ -49,7 +56,7 @@ generateButtonElement.addEventListener('click', function () {
     // qui prezzo per i minori con sconto del 20%
     //prezzo = prezzo - prezzo * 0.2
     price -= price * 0.2
-    document.getElementById("discountType").innerHTML = "Biglietto Minorenne";
+    document.getElementById("discountType").innerHTML = "Ridotto Minorenni";
     //console.log(price);
     //console.log(message);
 
@@ -67,6 +74,7 @@ generateButtonElement.addEventListener('click', function () {
     //console.log(message);
   }
 
+  document.getElementById("ticketCost").innerHTML = price.toFixed(2) + " €";
   // L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo).
   result.innerHTML = message
   console.log(message);
@@ -93,3 +101,6 @@ cancelButtonElement.addEventListener('click', function () {
 // faccio lo stesso per il tipo di biglietto, ma lo inserisco negli if adeguati per cambiarlo in base a option scelta
 
 //per carrozza e codice cp devo creare 2 generatori random 
+
+
+

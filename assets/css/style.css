@@ -54,3 +54,30 @@ h1 {
     padding: 0.25rem;
     border: 2px solid palevioletred;
   }
+
+#biglietto {
+    padding:1rem;
+    background-color: white;
+}
+
+ .grid {
+    display: flex;
+}
+
+.grigio {
+    background-color: grey;
+    width: 250px;
+    height: 130px;
+    padding: 1rem;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+
+.ticketDetails {
+    width: 200px;
+    height: 130px;
+    padding: 1rem;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+

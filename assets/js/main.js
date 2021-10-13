@@ -29,6 +29,8 @@ generateButtonElement.addEventListener('click', function () {
 
   console.log(km_da_percorrere, age);
 
+  document.getElementById("passName").innerHTML = fullName;
+
 
   /* Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio, secondo queste regole:
   - il prezzo del biglietto è definito in base ai km (0.21 € al km)
@@ -47,20 +49,20 @@ generateButtonElement.addEventListener('click', function () {
     // qui prezzo per i minori con sconto del 20%
     //prezzo = prezzo - prezzo * 0.2
     price -= price * 0.2
-    message = `${fullName}!Hai diritto allo sconto del 20%! <br> Prezzo biglietto: ${price.toFixed(2)}`
+    document.getElementById("discountType").innerHTML = "Biglietto Minorenne";
     //console.log(price);
     //console.log(message);
 
   } else if (age == 'over65') {
     // qui prezzo per gli over con sconto del 40%
     price -= price * 0.4
-    message = `${fullName}!Ciao nonno, hai diritto allo sconto del 40%! <br> Prezzo biglietto: ${price.toFixed(2)}`
+    document.getElementById("discountType").innerHTML = "Ridotto Anziani";
     //console.log(price);
     //console.log(message);
 
   } else {
     // mostriamo prezzo standard
-    message = `${fullName}!Mi dispiace per te niente sconto! Prezzo pieno del biglietto: ${price.toFixed(2)}`
+    document.getElementById("discountType").innerHTML = "Biglietto Standard";
     //console.log(price);
     //console.log(message);
   }
@@ -70,6 +72,8 @@ generateButtonElement.addEventListener('click', function () {
   console.log(message);
 
 });
+
+
 
 
 // Al click annulla tutto
@@ -82,3 +86,10 @@ cancelButtonElement.addEventListener('click', function () {
 
 
 });
+
+
+// metto nome immesso nella casella nome
+// document.getElementById("passName").innerHTML = fullName;
+// faccio lo stesso per il tipo di biglietto, ma lo inserisco negli if adeguati per cambiarlo in base a option scelta
+
+//per carrozza e codice cp devo creare 2 generatori random 

@@ -74,7 +74,7 @@ generateButtonElement.addEventListener('click', function () {
     //console.log(message);
   }
 
-  document.getElementById("ticketCost").innerHTML = price.toFixed(2) + " €";
+    document.getElementById("ticketCost").innerHTML = price.toFixed(2) + " €";
   // L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo).
   result.innerHTML = message
   console.log(message);
@@ -90,7 +90,11 @@ cancelButtonElement.addEventListener('click', function () {
   ageSelectElement.value = 'minorenne'
   distanceInputElement.value = ''
 
-  result.innerHTML = ''
+  document.getElementById("passName").innerHTML = "";
+  document.getElementById("discountType").innerHTML = "";
+  document.getElementById("wagonNumber").innerHTML = "";
+  document.getElementById("cpCode").innerHTML = "";
+  document.getElementById("ticketCost").innerHTML = "";
 
 
 });
